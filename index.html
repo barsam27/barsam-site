@@ -1,329 +1,108 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="fa">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>فروشگاه کد و بازی‌های برنامه‌نویسی</title>
-
+<title>بنر نمایشگاهی برتر 507</title>
 <style>
-/* =================== تنظیمات پایه =================== */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: url('InShot_20260201_222332852.jpgjpg') no-repeat center center fixed;
-  background-size: cover;
-  color: #fff;
-  transition: 0.5s;
-}
-
-a { text-decoration: none; color: inherit; }
-
-/* =================== هدر =================== */
-header {
-  background: rgba(0,0,0,0.7);
-  color: #fff;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header h1 { margin: 0; font-size: 22px; }
-
-nav a { margin: 0 10px; font-weight: bold; }
-
-/* =================== بنر =================== */
-.banner {
-  width: 100%;
-  height: 250px;
-  background: url('09_39_55_InShot_20260129_184538410.jpg') center/cover no-repeat;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 24px;
-  color: #fff;
-  font-weight: bold;
-}
-
-/* =================== محصولات =================== */
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 0 20px;
-}
-
-.product {
-  background: rgba(0,0,0,0.6);
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
-  text-align: center;
-  transition: transform 0.2s;
-}
-
-.product:hover { transform: translateY(-5px); }
-
-.product img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
-.product h3 { margin: 10px 0 5px; font-size: 18px; }
-.product p { font-size: 14px; color: #fff; }
-
-.product button {
-  margin-top: 10px;
-  padding: 10px 15px;
-  background: #4CAF50;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* =================== چت بات =================== */
-#chatBotContainer {
-  width: 100%;
-  max-width: 550px;
-  margin: 20px auto;
-  border-radius: 15px;
-  background: rgba(0,0,0,0.85);
-  padding: 15px;
-  font-family: Tahoma,sans-serif;
-}
-
-#chatBox {
-  height: 350px;
-  overflow-y: auto;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  background: #111;
-  border-radius: 10px;
-}
-
-#chatInput { flex:1; padding:10px; border-radius:8px; border:none; }
-#chatSend { padding:8px 14px; margin-left:5px; border:none; border-radius:8px; background:#4CAF50; cursor:pointer; }
-
-/* =================== لایت/دارک مود =================== */
-#lightToggleContainer {
-  display:flex;
-  justify-content:center;
-  margin:15px 0;
-}
-
-#lightToggle {
-  width: 140px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  font-weight: bold;
-  background-color: #ffffff;
-  border: 2px solid #000;
-  border-radius: 6px;
-  cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  transition: 0.3s;
-}
-
-#lightToggle:hover { background-color: #f0f0f0; }
-
-/* =================== فوتر =================== */
-footer {
-  background: rgba(0,0,0,0.7);
-  color: #fff;
-  text-align: center;
-  padding: 15px;
-  margin-top: 40px;
-  border-radius: 8px;
-}
-
-/* =================== نوار حریم خصوصی =================== */
-.privacy-bar {
-  width: 100%;
-  background-color: #0073e6;
-  color: #fff;
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 8px 0;
-  font-size: 14px;
-  position: relative;
-}
-
-.privacy-bar .marquee-text {
-  display: inline-block;
-  padding-left: 100%;
-  animation: marquee 55s linear infinite;
-}
-
-@keyframes marquee {
-  0% { transform: translateX(-100%); }
-  90% { transform: translateX(100%); }
-  100% { transform: translateX(100%); }
-}
-
-/* =================== ریسپانسیو =================== */
-@media (max-width:768px) {
-  header { flex-direction: column; align-items: flex-start; }
-  nav { margin-top: 10px; }
-  .banner { height: 180px; font-size: 18px; }
-}
+  body {
+    margin: 0;
+    font-family: 'Tahoma', sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+  h1, h2, h3 {
+    margin: 10px 0;
+  }
+  .highlight {
+    color: #de0b82;
+  }
+  .red {
+    color: #C8102E;
+  }
+  .banner {
+    border: 2px solid #de0b82;
+    padding: 30px;
+    margin-bottom: 40px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(222,11,130,0.2);
+  }
+  .banner ul {
+    list-style: none;
+    padding: 0;
+  }
+  .banner ul li {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  .banner ul li::before {
+    content: "✔";
+    margin-right: 10px;
+    color: #de0b82;
+  }
+  .product-image {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #de0b82;
+    padding: 5px;
+    margin: 20px 0;
+  }
+  .footer {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+  @media (max-width: 768px) {
+    .banner {
+      padding: 20px;
+    }
+    .banner ul li {
+      font-size: 16px;
+    }
+  }
 </style>
 </head>
-
 <body>
+<div class="container">
 
-<!-- هدر -->
-<header>
-  <h1>فروشگاه کد و بازی‌های برنامه‌نویسی</h1>
-  <nav>
-    <a href="#home">خانه</a>
-    <a href="#products">محصولات</a>
-    <a href="#chat">چت سایت</a>
-  </nav>
-</header>
-
-<!-- بنر -->
-<div class="banner" id="home">خرید بهترین کدها و پروژه‌های آماده</div>
-
-<!-- دکمه لایت/دارک -->
-<div id="lightToggleContainer">
-  <div id="lightToggle">🌞 حالت روشن</div>
-</div>
-
-<!-- محصولات -->
-<section id="products">
-  <h2 style="text-align:center; margin-bottom:20px;">محصولات ما</h2>
-  <div class="products">
-    <div class="product">
-      <img src="https://via.placeholder.com/200x150?text=چت+بات" alt="چت‌بات ساده">
-      <h3>چت‌بات ساده 🤖</h3>
-      <p>چت‌بات فارسی با رابط گرافیکی شیک</p>
-      <p><b>250,000 تومان</b></p>
-      <button onclick="addToCart('چت‌بات ساده',250000)">افزودن به سبد</button>
+  <!-- بنر اول -->
+  <div class="banner">
+    <h1>پودر موبر <span class="highlight">برتر ۵۰۷</span></h1>
+    <h2>نسل جدید مراقبت از پوست</h2>
+    <ul>
+      <li>ایمن، بدون بو، ضدحساسیت</li>
+      <li>همراه نرم‌کننده و روشن‌کننده پوست</li>
+      <li>قابل استفاده برای صورت و تمام بدن</li>
+    </ul>
+    <p>دارای مجوز <span class="red">وزارت بهداشت</span>, درمان و آموزش پزشکی</p>
+    <div class="footer">
+      رستاک پاک تن آسیا<br>
+      <a href="http://Bartar507.ir" target="_blank">Bartar507.ir</a>
     </div>
-    <div class="product">
-      <img src="https://via.placeholder.com/200x150?text=مارپله" alt="بازی مارپله">
-      <h3>بازی مارپله 🎲</h3>
-      <p>سورس کامل بازی مارپله با گرافیک و صدا</p>
-      <p><b>200,000 تومان</b></p>
-      <button onclick="addToCart('بازی مارپله',200000)">افزودن به سبد</button>
-    </div>
-    <div class="product">
-      <img src="https://via.placeholder.com/200x150?text=ماشین+حساب" alt="ماشین حساب">
-      <h3>ماشین حساب Tkinter</h3>
-      <p>سورس کامل ماشین حساب با رابط گرافیکی Python</p>
-      <p><b>100,000 تومان</b></p>
-      <button onclick="addToCart('ماشین حساب Tkinter',100000)">افزودن به سبد</button>
-    </div>
-    <!-- اینجا بقیه محصولاتت اضافه میشن -->
+    <img src="banner1-product.jpg" alt="محصول برتر 507" class="product-image">
   </div>
-</section>
 
-<!-- چت بات -->
-<section id="chat">
-  <div id="chatBotContainer">
-    <h2 style="text-align:center;">چت سایت</h2>
-    <div id="chatBox"></div>
-    <div style="display:flex; margin-top:8px;">
-      <input id="chatInput" placeholder="پیام خودت رو اینجا بنویس...">
-      <button id="chatSend">ارسال</button>
+  <!-- بنر دوم -->
+  <div class="banner">
+    <h1>چرا پودر موبر "<span class="highlight">برتر ۵۰۷</span>" انتخاب اول است؟</h1>
+    <h2>ما در کنار موبری، به سلامت پوست شما <span class="red">تعهد</span> داریم</h2>
+    <ul>
+      <li><span class="highlight">فرمولاسیون هوشمند:</span> بدون مواد مضر و بدون بو</li>
+      <li><span class="highlight">حفاظت از پوست:</span> ویژه پوست‌های حساس، جلوگیری از خشکی</li>
+      <li><span class="highlight">نتیجه ملموس:</span> پوستی صاف، روشن و لطیف در زمان کوتاه</li>
+    </ul>
+    <p>تجربه متفاوت موبری با دانش روز و کیفیت اصیل ایرانی</p>
+    <div class="footer">
+      رستاک پاک تن آسیا
     </div>
+    <img src="banner2-product.jpg" alt="محصول برتر 507" class="product-image">
   </div>
-</section>
 
-<!-- نوار حریم خصوصی -->
-<div class="privacy-bar">
-  <span class="marquee-text">
-    🔒 حریم خصوصی شما برای ما بسیار مهم است! اطلاعات شما فقط برای بهبود تجربه کاربری استفاده می‌شوند.
-  </span>
 </div>
-
-<!-- فوتر -->
-<footer>
-  تمامی حقوق محفوظ است © ۲۰۲۶
-</footer>
-
-<!-- =================== اسکریپت‌ها =================== -->
-<script>
-// سبد خرید
-let cart=[];
-function addToCart(name, price){
-  cart.push({name, price});
-  renderCart();
-}
-function renderCart(){
-  let total=0;
-  cart.forEach(item=>{ total+=item.price; });
-  console.log("سبد خرید:",cart,"جمع کل:",total);
-}
-
-// چت بات
-const qa = { "سلام":"سلام! خوش اومدی", "default":"لطفا سوالت را بپرس" };
-const chatBox=document.getElementById('chatBox');
-const chatInput=document.getElementById('chatInput');
-const chatSend=document.getElementById('chatSend');
-
-function addMessage(userText){
-  const userMsg=document.createElement('div');
-  userMsg.textContent=userText;
-  userMsg.style.background='#4CAF50';
-  userMsg.style.color='#000';
-  userMsg.style.padding='6px 10px';
-  userMsg.style.borderRadius='10px';
-  userMsg.style.margin='6px 0';
-  userMsg.style.alignSelf='flex-end';
-  chatBox.appendChild(userMsg);
-
-  const botText=qa[userText]||qa["default"];
-  const botMsg=document.createElement('div');
-  botMsg.textContent=botText;
-  botMsg.style.background='#333';
-  botMsg.style.color='white';
-  botMsg.style.padding='6px 10px';
-  botMsg.style.borderRadius='10px';
-  botMsg.style.margin='6px 0';
-  botMsg.style.alignSelf='flex-start';
-  chatBox.appendChild(botMsg);
-
-  chatBox.scrollTop=chatBox.scrollHeight;
-}
-
-chatSend.addEventListener('click',()=>{
-  const text=chatInput.value.trim();
-  if(!text) return;
-  addMessage(text);
-  chatInput.value='';
-});
-chatInput.addEventListener('keypress',function(e){
-  if(e.key==='Enter') chatSend.click();
-});
-
-// لایت/دارک مود
-const toggleBtn=document.getElementById("lightToggle");
-if(localStorage.getItem("mode")==="light"){ document.body.style.background="#fff"; toggleBtn.textContent="🌙 حالت تاریک"; } 
-else { document.body.style.background="url('InShot_20260201_222332852.jpgjpg') no-repeat center center fixed"; toggleBtn.textContent="🌞 حالت روشن"; }
-toggleBtn.addEventListener("click",()=>{
-  if(document.body.style.backgroundColor==="rgb(255, 255, 255)"){
-    document.body.style.background="url('InShot_20260201_222332852.jpgjpg') no-repeat center center fixed";
-    document.body.style.color="#fff";
-    toggleBtn.textContent="🌞 حالت روشن";
-    localStorage.setItem("mode","dark");
-  } else {
-    document.body.style.background="#fff";
-    document.body.style.color="#000";
-    toggleBtn.textContent="🌙 حالت تاریک";
-    localStorage.setItem("mode","light");
-  }
-});
-</script>
-
 </body>
-  </html>
+</html>
