@@ -1,24 +1,301 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-  <meta charset="UTF-8">
-  <title>barsam.python</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>barsam_shabestani.python - HELLO TO MY SITE</title>
+
+<style>
+  /* ---------- تصویر ثابت بالای صفحه ---------- */
+  .header-image { width:100%; text-align:center; margin-bottom:20px; }
+  .header-image img { width:100%; max-height:400px; object-fit:cover; display:block; }
+  @media(max-width:768px){ .header-image img{ max-height:250px; } }
+  @media(max-width:480px){ .header-image img{ max-height:180px; } }
+
+  /* ---------- Reset و فونت ---------- */
+  html, body{ height:100%; margin:0; padding:0; font-family:Arial,sans-serif; }
+  body{ padding:20px; background: url("InShot_20260201_222332852.jpgjpg") no-repeat center center fixed; background-size:cover; color:#fff; font-size:4vw; }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  h1,h2,p{ margin-bottom:10px; }
+  @media(max-width:768px){
+    body{ font-size:6vw; }
+    h1{ font-size:5vw; }
+    h2{ font-size:4.5vw; }
+    p{ font-size:4vw; }
+    .product-card{ font-size:4.5vw; padding:10px; }
+  }
+
+  /* ---------- کارت محصولات ---------- */
+  .product-card{
+    border:1px solid #ddd;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:8px;
+    background-color: rgba(0,0,0,0.6);
+    box-shadow:0 4px 8px rgba(0,0,0,0.4);
+  }
+
+  /* ---------- دکمه ---------- */
+  button{
+    background-color:#4CAF50;
+    color:white;
+    padding:10px 20px;
+    border:none;
+    cursor:pointer;
+    font-size:18px;
+    border-radius:6px;
+  }
+  button:hover{ background-color:#45a049; }
+
+  /* ---------- فوتر ---------- */
+  footer{ text-align:center; margin-top:40px; font-size:18px; }
+  footer p{ font-size:14px; }
+
+  /* ---------- باکس اجتماعی ---------- */
+  .social-box{
+    margin:30px auto;
+    max-width:400px;
+    padding:20px;
+    border-radius:15px;
+    background: rgba(17,17,17,0.8);
+    box-shadow:0 0 15px rgba(0,0,0,0.6);
+    text-align:center;
+  }
+  .social-box h2{ color:#fff; margin-bottom:15px; font-size:22px; }
+  .social-links a{
+    display:block;
+    margin:10px 0;
+    padding:12px;
+    border-radius:10px;
+    text-decoration:none;
+    font-size:18px;
+    color:white;
+    transition:0.3s;
+  }
+  .social-links a.instagram{ background: linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366); }
+  .social-links a.instagram:hover{ transform: scale(1.05); }
+  .social-links a.telegram{ background:#0088cc; }
+  .social-links a.telegram:hover{ transform: scale(1.05); }
+
+  /* ---------- همبرگر ---------- */
+  .hamburger{
+    position:fixed;
+    top:15px;
+    right:20px;
+    font-size:11px;
+    background-color: rgba(0,0,0,0.6);
+    color:white;
+    padding:10px 15px;
+    border-radius:8px;
+    cursor:pointer;
+    z-index:9999;
+    transition:0.3s;
+    text-decoration:none;
+  }
+  .hamburger:hover{ background-color: rgba(0,0,0,0.9); transform: scale(1.05); }
+
+  /* ---------- حالت لایت/دارک مود ---------- */
+  body.light-mode{
+    background:#ffffff !important;
+    color:#000 !important;
+    transition:0.3s;
+  }
+  body.light-mode h1, body.light-mode h2, body.light-mode p, body.light-mode .product-card, body.light-mode footer, body.light-mode .social-box h2, body.light-mode .social-links a{
+    color:#000 !important;
+  }
+  body.light-mode .product-card{
+    background-color: rgba(255,255,255,0.8) !important;
+    box-shadow:0 4px 8px rgba(0,0,0,0.2);
+  }
+  body.dark-mode{
+    background: url("InShot_20260201_222332852.jpgjpg") no-repeat center center fixed;
+    background-size:cover;
+    color:white;
+    transition:0.5s;
+  }
+
+  #lightToggleContainer{
+    display:flex;
+    justify-content:center;
+    margin-bottom:15px;
+  }
+  #lightToggle{
+    width:140px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:16px;
+    font-weight:bold;
+    background-color:#ffffff;
+    border:2px solid #000;
+    border-radius:6px;
+    cursor:pointer;
+    box-shadow:0 4px 8px rgba(0,0,0,0.3);
+    transition:0.3s;
+  }
+  #lightToggle:hover{ background-color:#f0f0f0; }
+
+  /* ---------- نوار حریم خصوصی ---------- */
+  .privacy-bar{
+    width:100%;
+    background-color:#0073e6;
+    color:#fff;
+    overflow:hidden;
+    white-space:nowrap;
+    padding:8px 0;
+    position:relative;
+    font-size:14px;
+    line-height:1.4;
+    box-shadow:0 2px 5px rgba(0,0,0,0.2);
+  }
+  .privacy-bar .marquee-text{
+    display:inline-block;
+    padding-left:100%;
+    animation:marquee 55s linear infinite;
+  }
+  @keyframes marquee{
+    0%{ transform:translateX(-100%); }
+    90%{ transform:translateX(100%); }
+    100%{ transform:translateX(100%); }
+  }
+  @media(max-width:480px){
+    .privacy-bar{ font-size:12px; padding:6px 0; }
+    .privacy-bar .marquee-text{ animation:marquee 55s linear infinite; }
+  }
+</style>
 </head>
 <body>
 
-<h1>barsam.python</h1>
+<!-- ---------- تصویر بالای صفحه ---------- -->
+<div class="header-image">
+  <img id="topImage" src="09_39_55_InShot_20260129_184538410.jpg" alt="تصویر بالای صفحه">
+</div>
+
+<!-- ---------- دکمه لایت/دارک مود ---------- -->
+<div id="lightToggleContainer">
+  <div id="lightToggle">🌞 حالت روشن</div>
+</div>
+
+<h1>barsam_shabestani.python</h1>
 <p>فروش کدهای پایتون</p>
 
-</body>
-</html>
+<a href="contact.html" class="hamburger">☰</a>
 
+<!-- ---------- کارت محصولات ---------- -->
+<div class="product-card">
+  <h2>🚀 کدهای آماده برای پروژه‌های واقعی</h2>
+  <p>اینجا می‌تونی سورس‌کدهای تمیز، تست‌شده و قابل توسعه پیدا کنی.</p>
+</div>
 
 <div class="product-card">
-  <h2>ماشین حساب پایتون (Tkinter)</h2>
-  <p>سورس کامل ماشین حساب با رابط گرافیکی Tkinter</p>
-  <p>قیمت: 100,000 تومان</p>
-  <a href="success.html">
-    <button>خرید و دانلود</button>
-  </a>
+  <h2>چت‌بات ساده 🤖</h2>
+  <p>چت‌بات فارسی با رابط گرافیکی شیک</p>
+  <p>قیمت: 250,000 تومان</p>
+  <a href="contact.html"><button>👉خرید و دریافت👈</button></a>
 </div>
+
+<!-- (بقیه محصولات هم مثل بالا می‌تونن اضافه شن، همونطور که خودت نوشتی) -->
+
+<!-- ---------- باکس اجتماعی ---------- -->
+<div class="social-box">
+  <h2>ارتباط با ما</h2>
+  <div class="social-links">
+    <a class="instagram" href="https://www.instagram.com/barsam.shabestani.python" target="_blank">📸 Instagram<br>barsam.shabestani.python</a>
+    <a class="telegram" href="https://t.me/pythonprogrammerpy" target="_blank">✈️ Telegram<br>pythonprogrammerpy</a>
+  </div>
+</div>
+
+<!-- ---------- نوار حریم خصوصی ---------- -->
+<div class="privacy-bar">
+  <span class="marquee-text">
+    🔒 حریم خصوصی شما برای ما بسیار مهم است! ما اطلاعات شخصی شما را جمع‌آوری نمی‌کنیم، مگر آنچه برای ارائه خدمات لازم است...
+  </span>
+</div>
+
+<!-- ---------- چت‌بات ---------- -->
+<div id="chatBotContainer" style="width:100%; max-width:550px; margin:20px auto; border-radius:15px; background:rgba(0,0,0,0.85); padding:15px; color:white; font-family:Tahoma,sans-serif;">
+  <h2 style="text-align:center;">چت سایت</h2>
+  <div id="chatBox" style="height:550px; overflow-y:auto; padding:10px; display:flex; flex-direction:column; background:#111; border-radius:10px;"></div>
+  <div style="display:flex; margin-top:8px;">
+    <input id="chatInput" placeholder="پیام خودت رو اینجا بنویس..." style="flex:1; padding:10px; border-radius:8px; border:none;">
+    <button id="chatSend" style="padding:8px 14px; margin-left:5px; border:none; border-radius:8px; background:#4CAF50; cursor:pointer;">ارسال</button>
+  </div>
+</div>
+
+<script>
+// ======= حالت لایت/دارک =======
+const toggleBtn = document.getElementById("lightToggle");
+if(localStorage.getItem("mode")==="light"){
+  document.body.classList.add("light-mode");
+  toggleBtn.textContent="🌙 حالت تاریک";
+}else{
+  document.body.classList.add("dark-mode");
+  toggleBtn.textContent="🌞 حالت روشن";
+}
+toggleBtn.addEventListener("click",()=>{
+  if(document.body.classList.contains("light-mode")){
+    document.body.classList.remove("light-mode");
+    document.body.classList.add("dark-mode");
+    toggleBtn.textContent="🌞 حالت روشن";
+    localStorage.setItem("mode","dark");
+  }else{
+    document.body.classList.remove("dark-mode");
+    document.body.classList.add("light-mode");
+    toggleBtn.textContent="🌙 حالت تاریک";
+    localStorage.setItem("mode","light");
+  }
+});
+
+// ======= چت‌بات =======
+const qa={
+  "سلام":"سلام خوش اومدی امیدوارم تجربه خوبی از سایت داشته باشی",
+  "default":"مرسی که پیام دادی، هر سوالی درباره سایت داری می تونی بپرسی درباره محصولات، قیمت‌ها، خرید، پشتیبانی و ویژگی‌ها جواب میدم"
+};
+const chatBox=document.getElementById('chatBox');
+const chatInput=document.getElementById('chatInput');
+const chatSend=document.getElementById('chatSend');
+
+function addMessage(userText){
+  const userMsg=document.createElement('div');
+  userMsg.className='msg user';
+  userMsg.textContent=userText;
+  userMsg.style.background='#4CAF50';
+  userMsg.style.color='#000';
+  userMsg.style.padding='6px 10px';
+  userMsg.style.borderRadius='10px';
+  userMsg.style.margin='6px 0';
+  userMsg.style.alignSelf='flex-end';
+  userMsg.style.maxWidth='90%';
+  chatBox.appendChild(userMsg);
+
+  const botText=qa[userText]||qa["default"];
+  const botMsg=document.createElement('div');
+  botMsg.className='msg bot';
+  botMsg.textContent=botText;
+  botMsg.style.background='#333';
+  botMsg.style.color='white';
+  botMsg.style.padding='6px 10px';
+  botMsg.style.borderRadius='10px';
+  botMsg.style.margin='6px 0';
+  botMsg.style.alignSelf='flex-start';
+  botMsg.style.maxWidth='90%';
+  chatBox.appendChild(botMsg);
+
+  chatBox.scrollTop=chatBox.scrollHeight;
+}
+
+chatSend.addEventListener('click',()=>{
+  const text=chatInput.value.trim();
+  if(text!==''){
+    addMessage(text);
+    chatInput.value='';
+  }
+});
+chatInput.addEventListener('keypress',e=>{
+  if(e.key==='Enter'){ chatSend.click(); }
+});
+</script>
+
+</body>
+  </html>
